@@ -1,0 +1,151 @@
+@font-face {
+  font-family: nohemi;
+  src: url(./Fonts/Nohemi-Light.otf);
+}
+
+@font-face {
+  font-family: nohemiB;
+  src: url(./Fonts/Nohemi-Bold.otf);
+}
+
+/*.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
+
+.button {
+  font-family: nohemi;
+  background-color: #000;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid black;
+  color: #FFF;
+  padding: 2px 2px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  transition-duration: 0.4s;
+}
+
+.button:hover { 
+  border-bottom: 1px solid white;
+}
+
+#log {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  right: 3%;
+}
+
+#explore {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  right: 10%;
+}
+
+#begin {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid white;
+  z-index: 1;
+}
+
+.pwr {
+  font-family: nohemi;
+  color: #FFF;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-100%, 0%);
+}
+
+.spotifyLogo {
+  position: absolute;
+  max-width: 90%;
+  top: 50%;
+  transform: translate(10%, -58%);
+}
+
+.logo {
+  font-family: nohemiB;
+  position: absolute;
+  background-color: #000;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  padding: 0px 0px;
+  left: 3%;
+  top: 50%;
+  color: #FFF;
+  font-size: 36px;
+  transform: translate(0%, -50%);
+}
+
+.loadingScreen {
+  overflow: hidden;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid white;
+  z-index: 1;
+}
+
+
+.loading {
+  position: inherit;
+  height: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
