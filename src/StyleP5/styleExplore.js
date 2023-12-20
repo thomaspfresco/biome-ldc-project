@@ -22,6 +22,12 @@ let colors = [["bluesRnb",[30,90,150]],["classicalJazz",[255,190,20]],["country"
 
 let dayMoments = ["OVERNIGHT","MORNING","AFTERNOON","EVENING","NIGHT"];
 
+let instructions = ["Click anywhere to move.","Click on the Creatures to collect them.",'Press "left arrow"/"right arrow" or scroll up/down to navigate through your Spotify history.','Press "space" or click on the Character to change the View Mode.'];
+let instIndex = 0;
+let instOpa = 0;
+let instStamp = 0;
+let instOn = true;
+
 let streamsPerDay = []; //lista de streams por dia -> []
 let streamsPerDayConcat = [];
 let days = []; //lista de objetos DAY
@@ -141,6 +147,7 @@ function processData() {
     }
 
     else {
+      window.songsAux.push([]);
       dates.push(aux);
       streamsPerDay.push(auxDay);
       streamsPerDayConcat.push(auxExp);
@@ -153,7 +160,7 @@ function processData() {
     prevDate = aux;
   })
 
-  console.log(streamsPerDayConcat);
+  //console.log(streamsPerDayConcat);
 }
 
 function getDayTime(day) {
@@ -344,6 +351,11 @@ function showNowPlaying() {
             if (p.dist(p.mouseX,p.mouseY,playerX,playerY) < this.size) {
               pause = true;
               this.debounce = p.millis();
+              if (instIndex === 3) {
+                instIndex++;
+                instOpa = 0;
+                instStamp = p.millis();
+              }
             } else {
 
             targetX = p.mouseX;
@@ -362,7 +374,14 @@ function showNowPlaying() {
               }
             }
  
-            if (check === false) p.mouseIsPressed = false;
+            if (check === false) {
+              p.mouseIsPressed = false;
+              if (instIndex === 0) {
+                instIndex++;
+                instOpa = 0;
+                instStamp = p.millis();
+              }
+            }
           }
         }
 
@@ -889,8 +908,36 @@ class Moment {
       this.mainGenre = genres[0][0];
       this.genre = "";
 
-      if (this.id < window.range) {
-        this.info = window.songs[this.id];
+      if (this.id+window.idOffset < window.range) {
+
+      let aux = false;
+
+      while(aux === false) {
+
+      let aux2 = window.idOffset;
+
+      for (let i = 0; i < window.songsAux[this.day].length; i++) {
+          if (window.songsAux[this.day].length === 0) {
+            window.songsAux[this.day].push([window.songs[this.id+window.idOffset][6],window.songs[this.id+window.idOffset][9]]);
+            break;
+          }
+          else {
+            if (window.songsAux[this.day][i][0] === window.songs[this.id+window.idOffset][6] 
+              && window.songsAux[this.day][i][1] === window.songs[this.id+window.idOffset][9]) {
+                window.idOffset++;
+                //console.log(window.idOffset);
+                i = window.songsAux[this.day].length;
+              }
+          }
+      }
+      if (aux2 === window.idOffset) {
+        window.songsAux[this.day].push([window.songs[this.id+window.idOffset][6],window.songs[this.id+window.idOffset][9]]);
+        aux = true;
+        //console.log("ai");
+      }
+    }
+
+        this.info = window.songs[this.id+window.idOffset];
         this.cover = p.loadImage(this.info[4]); 
         this.genre = this.info[7];
 
@@ -1127,9 +1174,14 @@ class Moment {
               }
       
               p.mouseIsPressed = false;
+              if (instIndex === 1) {
+                instIndex++;
+                instOpa = 0;
+                instStamp = p.millis();
+              }
               }
 
-            console.log("ai");
+            //console.log("ai");
       } else {
         this.onHoverPause = false;
       }
@@ -1158,7 +1210,7 @@ class Moment {
 
         this.onHover = true;
 
-        console.log(this.timeListened);
+        //console.log(this.timeListened);
 
         p.fill(230,230,230,this.infoOpa);
         p.noStroke();
@@ -1207,6 +1259,11 @@ class Moment {
         }
 
         p.mouseIsPressed = false;
+        if (instIndex === 1) {
+          instIndex++;
+          instOpa = 0;
+          instStamp = p.millis();
+        }
         }
       }
 
@@ -1341,10 +1398,10 @@ class Moment {
     for (let i = 0; i < streamsPerDayConcat.length; i++) { //days
       let aux = [];
       for (let j = 0; j < streamsPerDayConcat[i].length; j++) { //songs
-        if (id < window.range) {
+        /*if (id < window.range) {
         console.log(streamsPerDayConcat[i][j][0][0],streamsPerDayConcat[i][j][0][1],streamsPerDayConcat[i][j][0][2]);
         console.log(streamsPerDayConcat[i][j][1],streamsPerDayConcat[i][j][2]);
-        }
+        }*/
         aux.push(new Song(id,i,streamsPerDayConcat[i][j][1],streamsPerDayConcat[i][j][2],streamsPerDayConcat[i][j][0][2]));
 
         id++;
@@ -1370,6 +1427,11 @@ class Moment {
   p.keyPressed = function() {
     if (p.keyCode === 32) {
       pause = !pause;
+      if (instIndex === 3) {
+        instIndex++;
+        instOpa = 0;
+        instStamp = p.millis();
+      }
     }
     if (p.keyCode === p.RIGHT_ARROW) {
       if (currentDay < days.length-1) {
@@ -1380,6 +1442,11 @@ class Moment {
         opaPause = 0;
         opaUnderline = 0;
         opaUnderline2 = 0;
+        if (instIndex === 2) {
+          instIndex++;
+          instOpa = 0;
+          instStamp = p.millis();
+        }
       }
     }
     if (p.keyCode === p.LEFT_ARROW) {
@@ -1391,6 +1458,11 @@ class Moment {
         opaPause = 0;
         opaUnderline = 0;
         opaUnderline2 = 0;
+        if (instIndex === 2) {
+          instIndex++;
+          instOpa = 0;
+          instStamp = p.millis();
+        }
       }
     }
   }
@@ -1408,6 +1480,12 @@ class Moment {
         opaPause = 0;
         opaUnderline = 0;
         opaUnderline2 = 0;
+
+        if (instIndex === 2) {
+          instIndex++;
+          instOpa = 0;
+          instStamp = p.millis();
+        }
       }
     }
     else {
@@ -1419,9 +1497,15 @@ class Moment {
       opaPause = 0;
       opaUnderline = 0;
       opaUnderline2 = 0;
+
+      if (instIndex === 2) {
+        instIndex++;
+        instOpa = 0;
+        instStamp = p.millis();
+      }
       }
     }
-  
+
     scrollDebounce = p.millis();
   }
 } 
@@ -1526,6 +1610,18 @@ class Moment {
     else {
       opaPause = 0;
       opaBackground = 0;
+    }
+    if (instOn) {
+      if (instOpa < 255 && p.millis()-instStamp > 10000) instOpa += 3;
+      else if (p.millis()-instStamp < 15000 && instOpa > 0) instOpa -= 3;
+    }
+
+    if (pause !== true) {
+      p.fill(255,255,255,instOpa);
+      p.textFont(f1);
+      p.textSize(p.windowHeight/65);
+      p.textAlign(p.CENTER,p.TOP);
+      p.text(instructions[instIndex],p.windowWidth/2,p.windowHeight-p.windowWidth/20);
     }
   }
 }

@@ -85,7 +85,7 @@ export default function Explore() {
                 count++;
             }
         }
-        console.log(window.songs);
+        //console.log(window.songs);
     }
 
     // ---------------------------------------------------------------------------------------------------------------------

@@ -16,7 +16,7 @@ window.SCOPE = "user-read-recently-played"
 window.range = 250
 window.idOffset = 0
 window.songs = []
-window.songsProcessed = []
+window.songsAux = []
 window.totalMinutes = 0
 window.firstday = streams[0].endTime.split(" ")[0]
 
