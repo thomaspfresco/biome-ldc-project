@@ -1,72 +1,54 @@
-# Getting Started with Create React App
+# Bio.me for Spotify
+
+Web-based platform that generates an interactive digital ruled by the user's Spotify activity.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting Started
+
+### Prerequisites
 
 In the project directory, you can run:
 
-### `npm install`
+- Create a [Spotify](https://www.spotify.com/) account.
+- Request your complete streaming history data on the [privacy section](https://www.spotify.com/us/account/privacy/) of your Spotify profile.
+- Install [Node.js](https://nodejs.org/en/download)
 
-### `npm start`
+### Instalation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone this repository or download the source code.
+2. Replace the <code>src/StreamingHistory.json</code> file with your own.
+2. On the project directory, <code>npm install</code> to install all dependencies.
+3. On the project directory, <code>npm start</code> to run the app in the development mode.
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+In <code>src</code> directory you can find the source code of the application. The 2 more important folders are the following:
+- Pages - Here you have access to the files that rule the requests to the Spotify API and the basic html structure of the pages "Login" and "Explore". If you want to change or enhance the core data organization, as well as add new information calls, consider the files in this folder.
+- StyleP5 - Here you have access to all the interactive and dynamic dimentions of the pages "Login" and "Explore". If you want to change the look, the interactions or the creatures behavor, as well as add new features, consider the files in this folder.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Credits
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project is developed in the context of a university course in the MSc of Design and Multimedia of the University of Coimbra.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Technology
+- [React.js](https://react.dev) - App skeleton.
+    - [p5.js](https://p5js.org/) - App visual and interactive components.
+    - [Axios library](https://axios-http.com/docs/intro) - http requests management for information about Spotify history.
+- [Spotify API](https://developer.spotify.com/documentation/web-api) - Data source.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Code References
+-
+- [Coding Train. "#64 — Kinematics"](https://thecodingtrain.com/challenges/64-kinematics) - Base of the movement and behavor of the creatures.
+- [Tom Holloway. "Flow Fields and Noise Algorithms with P5.js"](https://dev.to/nyxtom/flow-fields-and-noise-algorithms-with-p5-js-5g67) - Base of the ornamental particles in the background.
 
-### `npm run eject`
+### Contributors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Thomas Fresco](https://github.com/thomaspfresco) - Design and development.
+- [Eva Filipe](https://github.com/evaffsimoes) - Provided her own Spotify complete streaming history and tested the platform.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
