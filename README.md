@@ -28,6 +28,18 @@ In <code>/src</code> directory you can find the source code of the application. 
 - <code>/Pages</code> - Here you have access to the files that rule the requests to the Spotify API and the basic HTML structure of the pages "Login" and "Explore". If you want to change or enhance the core data organization, as well as add new information calls, consider the files in this folder.
 - <code>/StyleP5</code> - Here you have access to all the interactive and dynamic dimentions of the pages "Login" and "Explore". If you want to change the look, the interactions or the creatures behavor, as well as add new features, consider the files in this folder.
 
+<code>/components</code> - In this directory you can find the components defined (the loading animation and the username fetcher).
+
+<code>/Fonts</code> - This directory contains all the fonts used on the platform.
+
+<code>/Images</code> - This directory contains all the images of the app (the loading gif and the Spotify logo).
+
+<code>/App.css</code> - This file has all the CSS of the project (for the landing page).
+
+<code>/StreamingHistorys.json</code> - This file contains the extended Spotify streaming history on study.
+
+<code>/genres.js</code> - This file contains the custom categorization made for this platform, based on [CHOSIC investigation](https://www.chosic.com/list-of-music-genres/).
+
 
 ## Credits
 
