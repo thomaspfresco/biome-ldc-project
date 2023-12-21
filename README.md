@@ -40,7 +40,7 @@ This project is developed in the context of a university course in the MSc of De
 - [Spotify API](https://developer.spotify.com/documentation/web-api) - Data source.
 
 ### Code References
-- [Dom the dev. "How to use the Spotify API In Your React JS App"](https://dev.to/dom_the_dev/how-to-use-the-spotify-api-in-your-react-js-app-50pn) - Spotify Login/Authentication.
+- [Dom the dev. "How to use the Spotify API In Your React JS App"](https://dev.to/dom_the_dev/how-to-use-the-spotify-api-in-your-react-js-app-50pn) - Spotify Login/Authentication and requests starting point.
 - [Coding Train. "#64 — Kinematics"](https://thecodingtrain.com/challenges/64-kinematics) - Base of the movement and behavor of the creatures.
 - [Tom Holloway. "Flow Fields and Noise Algorithms with P5.js"](https://dev.to/nyxtom/flow-fields-and-noise-algorithms-with-p5-js-5g67) - Base of the ornamental particles in the background.
 
