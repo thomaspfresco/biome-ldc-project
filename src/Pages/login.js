@@ -59,7 +59,7 @@ export default function Login() {
     return (
         <div className="canvas" ref={p5ContainerRef}>
             <div className="navbar">
-            <button className="logo">Biome</button>
+            <button className="logo">Bio.me</button>
             {!token ?
                 <a href={`${window.AUTH_ENDPOINT}?client_id=${window.CLIENT_ID}&redirect_uri=${window.REDIRECT_URI}&response_type=${window.RESPONSE_TYPE}&scope=${window.SCOPE}`}>
                     <button className='button' id="log">Login</button>

@@ -25,7 +25,7 @@ In the project directory, you can run:
 ## Usage
 
 In <code>/src</code> directory you can find the source code of the application. The 2 more important folders are the following:
-- <code>/Pages</code> - Here you have access to the files that rule the requests to the Spotify API and the basic html structure of the pages "Login" and "Explore". If you want to change or enhance the core data organization, as well as add new information calls, consider the files in this folder.
+- <code>/Pages</code> - Here you have access to the files that rule the requests to the Spotify API and the basic HTML structure of the pages "Login" and "Explore". If you want to change or enhance the core data organization, as well as add new information calls, consider the files in this folder.
 - <code>/StyleP5</code> - Here you have access to all the interactive and dynamic dimentions of the pages "Login" and "Explore". If you want to change the look, the interactions or the creatures behavor, as well as add new features, consider the files in this folder.
 
 
