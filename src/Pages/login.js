@@ -73,7 +73,9 @@ export default function Login() {
             </div>
 
             {token ? <button className="button" id='begin' onClick={() => { navigate("/explore") }}>Begin Experience</button>
-            : <button className="button" id='begin'>Try it Now</button>}
+            :<a href={`${window.AUTH_ENDPOINT}?client_id=${window.CLIENT_ID}&redirect_uri=${window.REDIRECT_URI}&response_type=${window.RESPONSE_TYPE}&scope=${window.SCOPE}`}>
+            <button className="button" id='begin'>Try it Now</button>
+            </a>}
 
             <div className="pwr">powered by
                 <a href="https://developer.spotify.com/documentation/web-api/"><img className="spotifyLogo" src={spotify} alt="Spotify Logo"/></a>
