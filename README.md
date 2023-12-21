@@ -36,7 +36,7 @@ In <code>/src</code> directory you can find the source code of the application. 
 
 <code>/App.css</code> - This file has all the CSS of the project (for the landing page).
 
-<code>/StreamingHistorys.json</code> - This file contains the extended Spotify streaming history on study.
+<code>/StreamingHistory.json</code> - This file contains the extended Spotify streaming history on study.
 
 <code>/genres.js</code> - This file contains the custom categorization made for this platform, based on [CHOSIC investigation](https://www.chosic.com/list-of-music-genres/).
 
