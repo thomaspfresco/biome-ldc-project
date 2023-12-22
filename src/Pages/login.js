@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 import GetUser from '../components/GetUser'
 
-import streams from '../StreamingHistory.json'
-
 import sketch from '../StyleP5/styleLogin'
 import p5 from 'p5';
 
@@ -21,14 +19,6 @@ export default function Login() {
     const [token, setToken] = useState("");
 
     // ---------------------------------------------------------------------------------------------------------------------
-
-    const totalTime = () => {
-        let total = 0
-        streams.forEach((stream) => {
-            total += stream.msPlayed
-        })
-        return (total/1000/60)
-    }
 
     useEffect(() => {
         const hash = window.location.hash

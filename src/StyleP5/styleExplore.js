@@ -159,8 +159,6 @@ function processData() {
 
     prevDate = aux;
   })
-
-  //console.log(streamsPerDayConcat);
 }
 
 function getDayTime(day) {
@@ -266,7 +264,6 @@ function showNowPlaying() {
         this.moving = false;
         this.d = 0;
 
-        //this.opaLabel = 0;
         this.opaHover = 0;
 
         this.opaCircles = 0;
@@ -402,7 +399,6 @@ function showNowPlaying() {
               if (p.mouseIsPressed) {
                 statSwitch = !statSwitch;
                 opaPause = 0;
-                //console.log(statSwitch);
                 p.mouseIsPressed = false;
               }
           }
@@ -473,8 +469,6 @@ function showNowPlaying() {
 
           this.angle = p.createVector(0, -1).angleBetween(p.createVector(pauseX - playerX, pauseY - playerY));
           this.d = p.dist(playerX, playerY, pauseX, pauseY);
-
-          //if (this.opaLabel < 255) this.opaLabel += 2;
 
           if (statSwitch) {
 
@@ -572,12 +566,6 @@ function showNowPlaying() {
             else p.text("-",p.windowWidth/15,p.windowHeight/2+p.windowHeight/12/2+p.windowHeight/12*3+p.windowHeight/50);
           }
 
-          /*p.textSize(p.windowHeight/50);
-          p.textFont(f2);
-          p.textAlign(p.CENTER,p.TOP);
-          p.fill(255,127);
-          p.text("HOME SCREEN  •  SHARE  •  HELP",p.windowWidth/2,p.windowHeight - p.windowWidth/30);*/
-
           if (incOffset > 0.005) incOffset-=0.005;
         }
         else {
@@ -593,7 +581,6 @@ function showNowPlaying() {
 
           this.angle = p.createVector(0, -1).angleBetween(p.createVector(targetX - playerX, targetY - playerY));
           this.d = p.dist(playerX, playerY, targetX, targetY);
-          //if (this.opaLabel > 0) this.opaLabel -= 15;
         }
 
         if (this.curve < 0) this.curve += 0.1;
@@ -606,11 +593,6 @@ function showNowPlaying() {
             if (this.d > p.windowHeight/70) this.d = p.windowHeight/70;
 
             if (this.d < p.windowHeight / 200) this.moving = false;
-
-            if (this.moving) {
-                //this.rot += 0.0001;
-                //this.radius += 1;
-            }
 
             if (this.moving === false) {
                 if (this.rot > 0.01) this.rot -= 0.0001;
@@ -659,7 +641,6 @@ function showNowPlaying() {
           if (this.moments[i].hover) {
             if (this.moments[i].opaLabel < 255) this.moments[i].opaLabel += 10;
           } else if (this.moments[i].opaLabel > 0) this.moments[i].opaLabel -= 10;
-          //p.text(dayMoments[i], playerX, playerY+this.moments[i].distance*2+p.windowHeight/15);
           p.pop();
           this.moments[i].update();
           this.moments[i].show();
@@ -693,7 +674,6 @@ function showNowPlaying() {
             days[currentDay].songs[i].visitedX = playerX + v.x + player.moments[m].radius/2*p.cos(player.moments[m].count + p.TWO_PI/days[currentDay].moments[m].length*i) + 6*p.cos(days[currentDay].songs[i].id - (5*player.moments[m].count));
             days[currentDay].songs[i].visitedY = playerY + v.y + player.moments[m].radius/2*p.sin(player.moments[m].count + p.TWO_PI/days[currentDay].moments[m].length*i) + 6*p.sin(days[currentDay].songs[i].id - (5*player.moments[m].count));
 
-            //console.log(days[currentDay].songs[i].visitedX);
             days[currentDay].songs[i].show();
             if (!player.songsVisited.includes(days[currentDay].songs[i])) days[currentDay].songs[i].visited = false;
           }
@@ -744,7 +724,6 @@ class Moment {
       
       p.fill(255,this.opaHighlight);
 
-      //p.stroke(255,255,255,this.opaOrbit);
       p.stroke(255,255,255,player.opaCircles);
       p.strokeWeight(0.5);
 
@@ -752,7 +731,6 @@ class Moment {
 
       p.push();
       p.circle(this.pos.x, this.pos.y,this.radius);
-      //p.circle(this.pos.x, this.pos.y,this.radius);
       p.translate(this.pos.x,this.pos.y);
       p.rotate(this.count);
       p.translate(-this.pos.x,-this.pos.y);
@@ -768,17 +746,8 @@ class Moment {
           p.translate(-this.pos.x - aux.x,-this.pos.y - aux.y);
           p.noStroke();
 
-          //let tX = playerX + this.distance*p.cos(p.PI + i*p.TWO_PI/nMoments);
-          //let tY = playerY + this.distance*p.sin(p.PI + i*p.TWO_PI/nMoments);
-
-          //let tX = playerX + aux2.x + this.radius/2*p.cos(this.count + p.TWO_PI/this.songs.length*i) + 10*p.cos(1/this.count);
-          //let tY = playerY + aux2.y + this.radius/2*p.sin(this.count + p.TWO_PI/this.songs.length*i) + 10*p.sin(1/this.count);
-
           let tX = playerX + this.radius*2*p.cos(this.count + p.TWO_PI/this.songs.length*i) * p.noise(this.songs[i][0]*this.id + this.count/4);
           let tY = playerY + this.radius*2*p.sin(this.count + p.TWO_PI/this.songs.length*i) * p.noise(this.songs[i][0]*this.id + this.count/4);
-
-          //tX = playerX + this.radius/2*p.cos(this.count + p.TWO_PI/this.songs.length*i);
-          //Y = playerY + this.radius/2*p.sin(this.count + p.TWO_PI/this.songs.length*i);
 
           if (pause) {
           tX = playerX + aux2.x + this.radius/2*p.cos(this.count + p.TWO_PI/this.songs.length*i) + 6*p.cos(this.songs[i][0] - (5*this.count));
@@ -788,10 +757,8 @@ class Moment {
           p.noStroke();
           p.strokeWeight(3);
           p.stroke(this.songs[i][1][0],this.songs[i][1][1],this.songs[i][1][2]);
-          //polygon(absolutePos.x, absolutePos.y, p.windowHeight/100,2);
-          //p.circle(this.pos.x + aux.x, this.pos.y + aux.y, p.windowHeight/100);
           p.pop();
-          //p.line(playerX,playerY,this.pos.x + aux.x,this.pos.y + aux.y);
+
           for (let j = 0; j < player.songsVisited.length; j++) {
             if (this.songs[i][0] === player.songsVisited[j].id) {
               player.songsVisited[j].visitedX = tX;
@@ -863,11 +830,9 @@ class Moment {
     }
     
     show(r) {
-  
       let point = p.createVector(0, 0);
       point.add(this.a);
       p.ellipse(point.x, point.y, r, r);
-      //p.rect(point.x + displaceX/2, point.y + displaceY/2, r*2, r*2);
       }
   }
 
@@ -882,7 +847,6 @@ class Moment {
       this.l = p.windowHeight/150 + 0.5*dayListens*p.windowHeight/300;
       this.segments = [];
       this.speed = 1;
-      //this.numSeg = p.round(p.random(1,5));
 
       this.timeStamps = timeStamps;
 
@@ -925,7 +889,6 @@ class Moment {
             if (window.songsAux[this.day][i][0] === window.songs[this.id+window.idOffset][6] 
               && window.songsAux[this.day][i][1] === window.songs[this.id+window.idOffset][9]) {
                 window.idOffset++;
-                //console.log(window.idOffset);
                 i = window.songsAux[this.day].length;
               }
           }
@@ -933,13 +896,13 @@ class Moment {
       if (aux2 === window.idOffset) {
         window.songsAux[this.day].push([window.songs[this.id+window.idOffset][6],window.songs[this.id+window.idOffset][9]]);
         aux = true;
-        //console.log("ai");
       }
     }
-
         this.info = window.songs[this.id+window.idOffset];
         this.cover = p.loadImage(this.info[4]); 
         this.genre = this.info[7];
+
+        console.log(this.info);
 
       for (let g in genres) {
         if (genres[g].includes(this.genre)) {
@@ -948,22 +911,14 @@ class Moment {
         }
     }
 
-    if (typeof this.genre === 'undefined') {
-      //let index = p.round(p.random(genres.length-1));
-      //this.genre = genres[index][p.round(p.random(genres[index].length-1))];
-      //console.log(this.genre);
-      //console.log(this.info);
-      this.genre = "-";
-    }
+    if (typeof this.genre === 'undefined') this.genre = "-";
+    
 
     this.c = findColor(this.mainGenre);
-        //this.numSeg = this.info[0];
       } else this.info = "";
 
 
       if (this.c === undefined || this.c === null) this.c = [255,255,255];
-      //console.log();
-      //console.log(this.numSeg);
 
       let x = p.random(mLeft,p.windowWidth-mLeft);
       let y = p.random(mTop,p.windowHeight-mTop);
@@ -1024,10 +979,10 @@ class Moment {
       
       this.vel.setMag(0);
   
-      //guide
-      this.vel.add(p.createVector(this.speed, 0)); // primary axis
-      this.vel.add(p.createVector(0, this.calcSine())); // perpendicular sinusoid
-      this.vel.add(p.createVector(0, this.calcPerlin()));  // noise term
+      //guia
+      this.vel.add(p.createVector(this.speed, 0)); //eixo principal
+      this.vel.add(p.createVector(0, this.calcSine())); //sin
+      this.vel.add(p.createVector(0, this.calcPerlin()));  //noise
   
       //limites
       if (this.pos.x > mRight || this.pos.x < mLeft ||
@@ -1053,7 +1008,6 @@ class Moment {
 
     checkHover() {
       for (let i = 0; i < days[this.day].songs.length; i++) {
-        //console.log(days[this.day].songs);
         if (days[this.day].songs[i].onHover && days[this.day].songs[i].id !== this.id) {
           return true;
         }
@@ -1181,7 +1135,6 @@ class Moment {
               }
               }
 
-            //console.log("ai");
       } else {
         this.onHoverPause = false;
       }
@@ -1209,8 +1162,6 @@ class Moment {
         else if (this.infoOpa  > 0 && this.onHover === false) this.infoOpa  -= 15;
 
         this.onHover = true;
-
-        //console.log(this.timeListened);
 
         p.fill(230,230,230,this.infoOpa);
         p.noStroke();
@@ -1398,10 +1349,6 @@ class Moment {
     for (let i = 0; i < streamsPerDayConcat.length; i++) { //days
       let aux = [];
       for (let j = 0; j < streamsPerDayConcat[i].length; j++) { //songs
-        /*if (id < window.range) {
-        console.log(streamsPerDayConcat[i][j][0][0],streamsPerDayConcat[i][j][0][1],streamsPerDayConcat[i][j][0][2]);
-        console.log(streamsPerDayConcat[i][j][1],streamsPerDayConcat[i][j][2]);
-        }*/
         aux.push(new Song(id,i,streamsPerDayConcat[i][j][1],streamsPerDayConcat[i][j][2],streamsPerDayConcat[i][j][0][2]));
 
         id++;
@@ -1438,7 +1385,6 @@ class Moment {
         currentDay += 1;
         songOpa = 0;
         days[currentDay].timer = p.millis();
-        //document.getElementById("player").currentTime = 29.9;
         opaPause = 0;
         opaUnderline = 0;
         opaUnderline2 = 0;
@@ -1454,7 +1400,6 @@ class Moment {
         currentDay -= 1;
         songOpa = 0;
         days[currentDay].timer = p.millis();
-        //document.getElementById("player").currentTime = 29.9;
         opaPause = 0;
         opaUnderline = 0;
         opaUnderline2 = 0;
@@ -1476,7 +1421,6 @@ class Moment {
         currentDay += 1;
         songOpa = 0;
         days[currentDay].timer = p.millis();
-        //document.getElementById("player").currentTime = 29.9;
         opaPause = 0;
         opaUnderline = 0;
         opaUnderline2 = 0;
@@ -1493,7 +1437,6 @@ class Moment {
       currentDay -= 1;
       songOpa = 0;
       days[currentDay].timer = p.millis();
-      //document.getElementById("player").currentTime = 29.9;
       opaPause = 0;
       opaUnderline = 0;
       opaUnderline2 = 0;
