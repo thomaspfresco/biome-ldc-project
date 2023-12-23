@@ -435,15 +435,18 @@ function showNowPlaying() {
       }
           else if (p.mouseX > p.windowWidth/16 &&
           p.mouseY > p.windowWidth/18 &&
-          p.mouseX < p.windowWidth/16 + p.windowHeight/4.1 &&
+          p.mouseX < p.windowWidth/16 + p.windowHeight/3.7 &&
           p.mouseY < p.windowWidth/18 + p.windowHeight/25 && statSwitch) {
+
+            p.fill(255,0,0);
+            p.rect(10,10,10,10);
 
             if (opaUnderline < 255) opaUnderline += 15;
 
               p.push();
               p.stroke(255,255,255,opaUnderline);
               p.strokeWeight(1);
-              p.line(p.windowWidth/15,p.windowWidth/18 + p.windowHeight/25,p.windowWidth/16 + p.windowHeight/4.3,p.windowWidth/18 + p.windowHeight/25);
+              p.line(p.windowWidth/15,p.windowWidth/18 + p.windowHeight/25,p.windowWidth/16 + p.windowHeight/3.8,p.windowWidth/18 + p.windowHeight/25);
               p.pop();
               if (p.mouseIsPressed) {
                 statSwitch = !statSwitch;
@@ -476,7 +479,7 @@ function showNowPlaying() {
             p.textFont(f2);
             p.textAlign(p.LEFT,p.CENTER);
             p.fill(230,230,230,opaPause/2 + opaUnderline/2);
-            p.text("ABOUT YOUR JOURNEY",p.windowWidth/15,p.windowWidth/15);  
+            p.text("ABOUT YOUR COLLECTION",p.windowWidth/15,p.windowWidth/15);  
 
             p.textSize(p.windowHeight/75);
             p.textFont(f2);
@@ -550,7 +553,7 @@ function showNowPlaying() {
             p.textSize(p.windowHeight/35);
 
             p.textAlign(p.LEFT,p.CENTER);
-            p.text("ABOUT YOUR JOURNEY",p.windowWidth/15,p.windowWidth/15);
+            p.text("ABOUT YOUR COLLECTION",p.windowWidth/15,p.windowWidth/15);
 
             p.textAlign(p.LEFT,p.TOP);
             p.text(this.streams,p.windowWidth/15,p.windowHeight/2-p.windowHeight/12/2-p.windowHeight/12*3+p.windowHeight/50);
@@ -902,7 +905,7 @@ class Moment {
         this.cover = p.loadImage(this.info[4]); 
         this.genre = this.info[7];
 
-        console.log(this.info);
+        //console.log(this.info);
 
       for (let g in genres) {
         if (genres[g].includes(this.genre)) {
