@@ -9,9 +9,9 @@ https://thecodingtrain.com/challenges/64-kinematics
 */
 
 import p5 from 'p5';
-import genres from '../genres.js';
+import genres from '../Data/genres.js';
 
-import streams from '../StreamingHistory.json';
+import streams from '../Data/StreamingHistory.json';
 import nohemiBold from '../Fonts/Nohemi-Bold.otf';
 import nohemiLight from '../Fonts/Nohemi-Light.otf';
 

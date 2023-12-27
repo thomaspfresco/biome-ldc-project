@@ -24,24 +24,20 @@ In the project directory, you can run:
 
 ## Usage
 
-In <code>/src</code> directory you can find the source code of the application. The 2 more important folders are the following:
+In <code>/src</code> directory you can find the source code of the application. The 3 more important folders are the following:
 - <code>/Pages</code> - Here you have access to the files that rule the requests to the Spotify API and the basic HTML structure of the pages "Login" and "Explore". If you want to change or enhance the core data organization, as well as add new information calls, consider the files in this folder.
 - <code>/StyleP5</code> - Here you have access to all the interactive and dynamic dimentions of the pages "Login" and "Explore". If you want to change the look, the interactions or the creatures behavor, as well as add new features, consider the files in this folder.
+- <code>/Data</code> - Here you can find the genres custom categorization made for this platform, based on [CHOSIC investigation](https://www.chosic.com/list-of-music-genres/), and all the JSONs files that contain the Spotify history data on study.
 
-<code>/App.js</code> - This file is where all the global variables (window) and routes are defined.
-
-<code>/App.css</code> - This file has all the CSS of the project (for the landing page).
-
-<code>/components</code> - In this directory you can find the components defined (the loading animation and the username fetcher).
+<code>/Components</code> - In this directory you can find the components defined (the loading animation and the username fetcher).
 
 <code>/Fonts</code> - This directory contains all the fonts used on the platform.
 
 <code>/Images</code> - This directory contains all the images of the app (the loading gif and the Spotify logo).
 
-<code>/StreamingHistory.json</code> - This file contains the extended Spotify streaming history on study.
+<code>/App.js</code> - This file is where all the global variables (window) and routes are defined.
 
-<code>/genres.js</code> - This file contains the custom categorization made for this platform, based on [CHOSIC investigation](https://www.chosic.com/list-of-music-genres/).
-
+<code>/App.css</code> - This file has all the CSS of the project (for the landing page).
 
 ## Credits
 

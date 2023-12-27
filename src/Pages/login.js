@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-import GetUser from '../components/GetUser'
+import GetUser from '../Components/GetUser'
 
 import sketch from '../StyleP5/styleLogin'
 import p5 from 'p5';

@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 
 import sketch from '../StyleP5/styleExplore'
 
-import Loading from '../components/Loading'
+import Loading from '../Components/Loading'
 
 import axios from 'axios'
 import p5 from 'p5';
 
-import streams from '../StreamingHistory.json';
+import streams from '../Data/StreamingHistory.json';
 
 //import { type } from '@testing-library/user-event/dist/type/index.js';
 

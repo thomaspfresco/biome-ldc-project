@@ -3,7 +3,7 @@ import Login from './Pages/login'
 import Explore from './Pages/explore'
 import NoPage from './Pages/noPage'
 
-import streams from './StreamingHistory.json'
+import streams from './Data/StreamingHistory.json';
 
 import './App.css';
 
