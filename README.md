@@ -27,7 +27,7 @@ In the project directory, you can run:
 In <code>/src</code> directory you can find the source code of the application. The 3 more important folders are the following:
 - <code>/Pages</code> - Here you have access to the files that rule the requests to the Spotify API and the basic HTML structure of the pages "Login" and "Explore". If you want to change or enhance the core data organization, as well as add new information calls, consider the files in this folder.
 - <code>/StyleP5</code> - Here you have access to all the interactive and dynamic dimentions of the pages "Login" and "Explore". If you want to change the look, the interactions or the creatures behavor, as well as add new features, consider the files in this folder.
-- <code>/Data</code> - Here you can find the genres custom categorization made for this platform, based on [CHOSIC investigation](https://www.chosic.com/list-of-music-genres/), and all the JSONs files that contain the Spotify history data on study.
+- <code>/Data</code> - Here you can find the genres custom categorization made for this platform, based on [CHOSIC investigation](https://www.chosic.com/list-of-music-genres/), and all the JSON files that contain the Spotify history data on study.
 
 <code>/Components</code> - In this directory you can find the components defined (the loading animation and the username fetcher).
 
