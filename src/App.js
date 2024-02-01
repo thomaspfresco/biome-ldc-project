@@ -13,7 +13,7 @@ window.AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 window.RESPONSE_TYPE = "token"
 window.SCOPE = "user-read-recently-played"
 
-window.range = 100
+window.range = 150
 window.idOffset = 0
 window.songs = []
 window.songsAux = []

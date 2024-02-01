@@ -438,8 +438,8 @@ function showNowPlaying() {
           p.mouseX < p.windowWidth/16 + p.windowHeight/3.7 &&
           p.mouseY < p.windowWidth/18 + p.windowHeight/25 && statSwitch) {
 
-            p.fill(255,0,0);
-            p.rect(10,10,10,10);
+            //p.fill(255,0,0);
+            //p.rect(10,10,10,10);
 
             if (opaUnderline < 255) opaUnderline += 15;
 
